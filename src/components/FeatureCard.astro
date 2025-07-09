@@ -1,0 +1,47 @@
+---
+import { Button } from "@/components/ui/button";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+export interface Props {
+  variant: "dark" | "light";
+  imageSrc: ImageMetadata;
+  imageAlt: string;
+  title: string; // Supports HTML via set:html for bolding etc.
+  buttonText: string;
+  buttonHref: string;
+}
+
+const { variant, imageSrc, imageAlt, title, buttonText, buttonHref } =
+  Astro.props;
+
+const styles = {
+  dark: {
+    container: "bg-primary text-white",
+    button: "secondary" as const,
+  },
+  light: {
+    container: "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50",
+    button: "default" as const,
+  },
+};
+---
+
+<div
+  class:list={[
+    "flex flex-col items-center gap-6 rounded-2xl p-8 text-center",
+    styles[variant].container,
+  ]}
+>
+  <Image src={imageSrc} alt={imageAlt} width={250} height={250} class=" w-auto object-contain" />
+
+  <h3 class="max-w-xs text-3xl font-semibold tracking-tight">
+    <Fragment set:html={title} />
+  </h3>
+
+  <a href={buttonHref}>
+    <Button variant={styles[variant].button} size="lg" class="mt-2 !w-full !flex">
+      {buttonText}
+    </Button>
+  </a>
+</div> 

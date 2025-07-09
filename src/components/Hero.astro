@@ -1,0 +1,152 @@
+---
+import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
+import penguinSurprised from "../images/penguin_surprised.png";
+import appMockUp1 from "../images/app_mockup_1.png";
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section class="bg-white dark:bg-gray-950 relative overflow-hidden">
+  <div class="container mx-auto max-w-lg flex flex-col gap-6 px-4 py-16">
+    <div class="relative">
+      <!-- Title -->
+      <div>
+        <p class="text-2xl sm:text-3xl font-medium text-gray-600 dark:text-gray-300 z-10 relative">
+          <span id="dynamic-text">Lose weight</span><br />with
+        </p>
+        <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white z-10 relative">
+          PenguFit <span class="text-primary">AI</span>
+        </h1>
+      </div>
+      
+      <div class="absolute bottom-2 right-0 z-0">
+        <Image
+          src={penguinSurprised}
+          alt="A cute, excited penguin mascot for PenguFit AI"
+          width={190}
+          height={190}
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex gap-4 mt-4 w-full z-10 relative">
+        <a href="https://pengufit.com/login" class={buttonVariants({ size: "lg" })}>Sign Up For Free</a>
+        <a href="https://pengufit.com/login" class={buttonVariants({ size: "lg", variant:"secondary" })}>Log in</a>
+      </div>
+    </div>
+
+    <!-- Phone Mockup Image -->
+    <div class="mt-10 flex items-center justify-center">
+      <Image
+        src={appMockUp1}
+        alt="PenguFit application interface shown on an iPhone"
+        class="scale-180"
+        width={1000}
+        height={1000}
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  #dynamic-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 1.2em; /* Ajusta según tu line-height */
+    transition: all 0.5s ease-in-out;
+  }
+
+  .scroll-up {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .scroll-down {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .scroll-center {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Animación alternativa de slide horizontal */
+  .slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .slide-right {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .slide-center {
+    transform: translateX(0);
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const dynamicText = document.getElementById("dynamic-text");
+  const phrases = ["Lose weight", "Gain muscle", "Eat healthy", "Track progress"];
+  let currentIndex = 0;
+
+  function updateTextScroll() {
+    if (dynamicText) {
+      // Scroll up effect
+      dynamicText.classList.remove("scroll-center");
+      dynamicText.classList.add("scroll-up");
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % phrases.length;
+        dynamicText.textContent = phrases[currentIndex];
+        
+        // Reset position off-screen (down)
+        dynamicText.classList.remove("scroll-up");
+        dynamicText.classList.add("scroll-down");
+        
+        // Small delay to ensure the element is positioned
+        setTimeout(() => {
+          dynamicText.classList.remove("scroll-down");
+          dynamicText.classList.add("scroll-center");
+        }, 50);
+      }, 500); // Wait for scroll-up animation
+    }
+  }
+
+  // Función alternativa para efecto slide horizontal
+  function updateTextSlide() {
+    if (dynamicText) {
+      // Slide left effect
+      dynamicText.classList.remove("slide-center");
+      dynamicText.classList.add("slide-left");
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % phrases.length;
+        dynamicText.textContent = phrases[currentIndex];
+        
+        // Reset position off-screen (right)
+        dynamicText.classList.remove("slide-left");
+        dynamicText.classList.add("slide-right");
+        
+        // Small delay to ensure the element is positioned
+        setTimeout(() => {
+          dynamicText.classList.remove("slide-right");
+          dynamicText.classList.add("slide-center");
+        }, 50);
+      }, 500);
+    }
+  }
+
+  if (dynamicText) {
+    // Inicializar con la posición central
+    dynamicText.classList.add("scroll-center");
+    
+    // Cambiar cada 2 segundos - usa updateTextScroll para efecto vertical
+    // o updateTextSlide para efecto horizontal
+    setInterval(updateTextScroll, 3000);
+  }
+</script>

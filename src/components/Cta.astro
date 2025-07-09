@@ -1,0 +1,30 @@
+---
+import { buttonVariants } from "./ui/button";
+import { Image } from "astro:assets";
+import penguinExcited from "../images/penguin_excited.png";
+---
+
+<div
+  class="mx-auto flex max-w-xl flex-col items-center justify-center gap-6 text-center"
+>
+  <h2 class="text-3xl font-bold">
+    Start tracking <span class="font-extrabold text-primary">smarter.</span>
+    Your goals, powered by <span class="font-extrabold text-primary">AI.</span>
+  </h2>
+  <Image
+    src={penguinExcited}
+    alt="A happy penguin jumping"
+    width={400}
+    height={400}
+    class="pointer-events-none"
+  />
+
+  <a href="https://pengufit.com/login" class={buttonVariants({ size: "lg", className: "w-full" })}>
+    Get Started Free
+  </a>
+  <p class="text-sm text-muted-foreground">
+    Sign up now and get 7 days of free daily scans <strong
+      >no card required</strong
+    >.
+  </p>
+</div> 

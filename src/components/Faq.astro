@@ -1,0 +1,41 @@
+---
+import { FaqAccordion } from "./FaqAccordion";
+
+const faqs = [
+  {
+    question: "How does the AI scanning work?",
+    answer:
+      "Our AI scans food labels and purchase receipts to instantly estimate nutritional values like calories, proteins, fats, and carbs. Just take a photo or upload an image, and the app will do the rest automatically.",
+  },
+  {
+    question: "Do I get a free trial?",
+    answer:
+      "Yes! When you create an account, you’ll get 2 free AI scans per day for the first 7 days — no credit card required.",
+  },
+  {
+    question: "What’s included in the Premium plan?",
+    answer:
+      "The Premium plan gives you up to 285 smart AI scans per month, depending on the scan type. It also unlocks receipt scanning and provides more flexibility to track your meals and progress.",
+  },
+  {
+    question: "Can I cancel my subscription anytime?",
+    answer:
+      "Absolutely. You can cancel your subscription at any time from your account settings. You’ll still keep access until the end of your billing period.",
+  },
+  {
+    question: "Is my personal data safe?",
+    answer:
+      "Yes. We follow industry best practices to secure your data, including encryption in transit and at rest. Your information is never shared or sold to third parties.",
+  },
+  {
+    question: "Is this a medical or diet app?",
+    answer:
+      "No. PenguFit AI is not a medical app and does not provide professional dietary advice. It’s designed to support your goals through tracking, not to replace healthcare professionals.",
+  },
+];
+---
+
+<div class="mx-auto max-w-xl">
+  <h2 class="mb-8 text-center text-3xl font-bold">Frequently Asked Questions</h2>
+  <FaqAccordion client:visible data={faqs} />
+</div> 

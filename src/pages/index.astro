@@ -1,16 +1,69 @@
 ---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Faq from "../components/Faq.astro";
+import Cta from "../components/Cta.astro";
 
+// Using existing images as placeholders
+import penguinStreak from "../images/penguin_streaks.png";
+import penguinExercise from "../images/penguin_exercise.png";
+import penguinScan from "../images/penguin_apple.png";
+import penguinHealthy from "../images/penguin_healthy.png";
+import penguinPremium from "../images/penguin_premium.png";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Hero />
+  <section class="py-12 px-4">
+    <div class="container mx-auto grid gap-8 sm:max-w-xl">
+      <FeatureCard
+        variant="dark"
+        imageSrc={penguinScan}
+        imageAlt="Penguin holding a healthy apple"
+        title="<strong>Understand</strong> your meals in seconds with <strong>AI</strong>"
+        buttonText="Start Scanning"
+        buttonHref="https://pengufit.com/login"
+      />
+      <FeatureCard
+        variant="light"
+        imageSrc={penguinHealthy}
+        imageAlt="Penguin relaxed with an apple"
+        title="<strong>Effortless</strong> calorie and weight goal <strong>tracking</strong>"
+        buttonText="Set my goals"
+        buttonHref="https://pengufit.com/login"
+      />
+      <FeatureCard
+      variant="dark"
+      imageSrc={penguinExercise}
+      imageAlt="Penguin exercising and jumping rope"
+      title="Track your <strong>progress</strong><br>over time"
+      buttonText="Start Tracking"
+      buttonHref="https://pengufit.com/login"
+    />
+    <FeatureCard
+    variant="light"
+    imageSrc={penguinStreak}
+    imageAlt="Penguin with a streak"
+    title="Stay <strong>consistent</strong> with streak tracking"
+    buttonText="Set my goals"
+    buttonHref="https://pengufit.com/login"
+  />
+  <FeatureCard
+  variant="dark"
+  imageSrc={penguinPremium}
+  imageAlt="Premium penguin"
+  title="Unlock <strong>Premium</strong> for more <strong>AI power</strong>"
+  buttonText="Go Premium"
+  buttonHref="https://pengufit.com/login"
+/>
+    </div>
+  </section>
+  <section class="py-12  px-4">
+    <Faq />
+  </section>
+  <section class="py-12  px-4">
+    <Cta />
+  </section>
+</Layout>
+	

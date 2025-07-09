@@ -1,0 +1,101 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<Layout title="Terms & Conditions - PenguFit AI">
+  <main class="container mx-auto max-w-4xl py-20 px-4">
+    <a href="/" class={buttonVariants({ variant: "secondary" }) + " mb-8"}>Back to Home</a>
+    <div class="space-y-4 p-1">
+     
+      <h1 class="text-3xl font-bold">Terms & Conditions</h1>
+      <p class="text-sm text-gray-500"><strong>Last updated: 07/08/25</strong></p>
+      <p>Welcome to our calorie tracking app ("PenguFit"). By accessing or using our services, you agree to be bound by the following Terms and Conditions ("Terms"). Please read them carefully. If you do not agree to these Terms, do not use the App.</p>
+
+      <h2 class="text-xl font-bold mt-4">1. Overview of Services</h2>
+      <p>The App provides users with the following functionalities:</p>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Account creation and login.</li>
+          <li>Add meals and view corresponding calorie data.</li>
+          <li>Set personal calorie and weight goals.</li>
+          <li>Track current weight over time.</li>
+          <li>Monitor streaks (consecutive days of use).</li>
+          <li>AI-powered scanning of food items and purchase receipts.</li>
+          <li>Optional Premium subscription for extended features.</li>
+      </ul>
+
+      <h2 class="text-xl font-bold mt-4">2. Eligibility</h2>
+      <p>You must be at least 18 years old (or the age of digital consent in your jurisdiction) to use the App. By using the App, you confirm that you meet this requirement.</p>
+
+      <h2 class="text-xl font-bold mt-4">3. Account Registration</h2>
+      <p>You agree to provide accurate and complete information when creating your account and to update such information as needed. You are responsible for maintaining the confidentiality of your login credentials.</p>
+
+      <h2 class="text-xl font-bold mt-4">4. Free and Premium Usage</h2>
+      <h3 class="text-lg font-semibold">Free Users</h3>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Upon account creation, you are granted access to <strong>2 free AI scans per day</strong> for a period of <strong>7 consecutive days</strong>.</li>
+          <li>After this period, no further AI scans are available unless you subscribe to Premium.</li>
+      </ul>
+
+      <h3 class="text-lg font-semibold mt-2">Premium Subscription</h3>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Premium access costs <strong>$4.99 USD per month</strong>.</li>
+          <li>The subscription can be <strong>cancelled at any time</strong>, effective at the end of the billing cycle.</li>
+          <li>The Premium plan includes access to <strong>up to 285 AI-powered scans per month</strong>, depending on usage:
+              <ul class="list-disc list-inside ml-4 mt-1">
+                  <li>Food scans consume fewer resources than receipt scans.</li>
+                  <li>On average, users can perform <strong>~181 scans/month</strong>.</li>
+                  <li>If only receipt scans are used, users can expect <strong>a minimum of ~130 scans/month</strong>.</li>
+              </ul>
+          </li>
+      </ul>
+      <p class="mt-2">We reserve the right to adjust scan limits or pricing with prior notice.</p>
+      
+      <h2 class="text-xl font-bold mt-4">5. AI-Based Scanning</h2>
+      <p>The App uses machine learning and AI to analyze:</p>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Food entries based on text or image input.</li>
+          <li>Purchase receipts or tickets.</li>
+      </ul>
+      <p>While we aim for high accuracy, AI results may contain errors or omissions. You agree not to rely solely on these analyses for medical, nutritional, or health decisions.</p>
+
+      <h2 class="text-xl font-bold mt-4">6. User Responsibilities</h2>
+      <p>You agree not to:</p>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Misuse or attempt to disrupt the App.</li>
+          <li>Use automated systems to access the service (e.g., bots).</li>
+          <li>Share your account with others or use someone else’s account.</li>
+      </ul>
+
+      <h2 class="text-xl font-bold mt-4">7. Health Disclaimer</h2>
+      <p>The App is not a medical or nutritional service. It does <strong>not</strong> provide medical advice or personalized dietary recommendations. Always consult a physician or qualified health professional before making changes to your diet or exercise routine.</p>
+
+      <h2 class="text-xl font-bold mt-4">8. Payments and Billing</h2>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Payments are processed through a secure third-party provider.</li>
+          <li>All payments are non-refundable unless required by law.</li>
+          <li>You are responsible for any taxes, fees, or currency conversion charges.</li>
+      </ul>
+
+      <h2 class="text-xl font-bold mt-4">9. Termination</h2>
+      <p>We reserve the right to suspend or terminate your account if you violate these Terms or abuse the service.</p>
+
+      <h2 class="text-xl font-bold mt-4">10. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, we are not liable for:</p>
+      <ul class="list-disc list-inside space-y-1">
+          <li>Any indirect, incidental, or consequential damages.</li>
+          <li>Loss of data, profits, or health outcomes based on your use of the App.</li>
+          <li>Service interruptions or errors due to third-party providers.</li>
+      </ul>
+
+      <h2 class="text-xl font-bold mt-4">11. Changes to the Terms</h2>
+      <p>We may modify these Terms at any time. We will notify users of significant changes. Continued use of the App after such modifications constitutes your acceptance of the updated Terms.</p>
+
+      <h2 class="text-xl font-bold mt-4">12. Governing Law</h2>
+      <p>These Terms are governed by the laws of Argentina, without regard to its conflict of laws rules.</p>
+      
+      <h2 class="text-xl font-bold mt-4">13. Contact Us</h2>
+      <p>For any questions or concerns about these Terms, please contact us at:<br/><strong>contact@pengufit.com</strong></p>
+  </div>
+  </main>
+</Layout> 
