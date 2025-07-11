@@ -39,8 +39,8 @@ const styles = {
     <Fragment set:html={title} />
   </h3>
 
-  <a href={buttonHref}>
-    <Button variant={styles[variant].button} size="lg" class="mt-2 !w-full !flex">
+  <a href={buttonHref} onclick={buttonHref === 'https://pengufit.com/login' ? 'handleLoginClick()' : undefined}>
+    <Button variant={styles[variant].button} size="lg" className="mt-2 !w-full !flex">
       {buttonText}
     </Button>
   </a>
