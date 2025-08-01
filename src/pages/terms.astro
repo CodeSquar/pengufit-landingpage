@@ -1,16 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { buttonVariants } from "@/components/ui/button";
+import { MoveLeft } from "lucide-react";
+
 ---
 
-<Layout title="Terms & Conditions - PenguFit AI">
+<Layout title="Terms of Service - PenguFit AI">
   <main class="container mx-auto max-w-4xl py-20 px-4">
-    <a href="/" class={buttonVariants({ variant: "secondary" }) + " mb-8"}>Back to Home</a>
+    <a href="/" class={buttonVariants({ variant: "secondary" }) + " mb-8"}>
+        <MoveLeft size={16} />
+        Back to Home</a>
     <div class="space-y-4 p-1">
      
-      <h1 class="text-3xl font-bold">Terms & Conditions</h1>
+      <h1 class="text-3xl font-bold">Terms of Service</h1>
       <p class="text-sm text-gray-500"><strong>Last updated: 07/08/25</strong></p>
-      <p>Welcome to our calorie tracking app ("PenguFit"). By accessing or using our services, you agree to be bound by the following Terms and Conditions ("Terms"). Please read them carefully. If you do not agree to these Terms, do not use the App.</p>
+      <p>Welcome to our calorie tracking app ("PenguFit"). By accessing or using our services, you agree to be bound by the following Terms of Service ("Terms"). Please read them carefully. If you do not agree to these Terms, do not use the App.</p>
 
       <h2 class="text-xl font-bold mt-4">1. Overview of Services</h2>
       <p>The App provides users with the following functionalities:</p>
